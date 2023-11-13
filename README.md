@@ -56,7 +56,7 @@ python train_all.py [options]
 ```
 
 ## License
-This project is licensed under ...
+This project is licensed under MIT License.
 
 ## Contact
-For any questions or inquiries, please contact ...
+For any questions or inquiries, please contact xiongxs@zju.edu.cn.
