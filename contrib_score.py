@@ -19,7 +19,7 @@ random.seed(2077)
 SEQUENCE_LENGTH = 65536
 
 device = 'cuda:0'
-checkpoint = '/data/slurm/hejl/riboseq/results_DNA/bigmodel/bigmodel_h512_l12_lr1e-5/models/epoch=38-step=746889.ckpt'
+checkpoint = 'results/bigmodel_h512_l12_lr1e-5/models/epoch=38-step=746889.ckpt'
 model = TrainModule.load_from_checkpoint(checkpoint).to(device)
 model = model.eval()
 
@@ -72,11 +72,11 @@ def scaled_hypothetical_score(model, model_input, target_mask):
     input_grad = input_grad[:, [0, 2, 3, 1]]
     return input_grad.detach()
 
-fasta_file = '/data/slurm/hejl/riboseq/data/hg38/hg38.fa'
+fasta_file = 'data/hg38/hg38.fa'
 fasta_extractor = FastaStringExtractor(fasta_file)
-gff_file = '/data/slurm/hejl/riboseq/gencode.v43.annotation.gff3'
-rna_bw_file = '/data/slurm/hejl/riboseq/Translatomer/data/hg38/mean.sorted.bw' #32 cell type
-geneid_file = '/data/slurm/hejl/riboseq/Translatomer/motif/fwd.all_gene.txt'  #allgene
+gff_file = 'data/hg38/gencode.v43.annotation.gff3'
+rna_bw_file = 'data/hg38/mean.sorted.bw' #32 cell type
+geneid_file = 'contrib_score/fwd.all_gene.txt'  #allgene
             
 def interval_generator(geneid_file):
     with open(geneid_file) as f:
@@ -172,6 +172,6 @@ TFmodisco_input_array[np.isnan(TFmodisco_input_array) | np.isinf(TFmodisco_input
 hypothetical_scores_array[np.isnan(hypothetical_scores_array) | np.isinf(hypothetical_scores_array)] = 0
 
 # Save the array to a .npz file
-np.savez('/data/slurm/hejl/riboseq/Translatomer/contib_score/TFmodisco_seq.all.fwd.65k.npz', arr_0 = TFmodisco_input_array)
-np.savez('/data/slurm/hejl/riboseq/Translatomer/contib_score/TFmodisco_score.all.fwd.65k.npz', arr_0 = contribution_scores_array)
-np.savez('/data/slurm/hejl/riboseq/Translatomer/contib_score/TFmodisco_hypscore.all.fwd.65k.npz', arr_0 = hypothetical_scores_array)
+np.savez('contib_score/TFmodisco_seq.all.fwd.65k.npz', arr_0 = TFmodisco_input_array)
+np.savez('contib_score/TFmodisco_score.all.fwd.65k.npz', arr_0 = contribution_scores_array)
+np.savez('contib_score/TFmodisco_hypscore.all.fwd.65k.npz', arr_0 = hypothetical_scores_array)
