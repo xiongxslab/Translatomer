@@ -55,6 +55,9 @@ python train_all.py [options]
 - --num-workers  Number of dataloader workers. Default = 1.
 ```
 
+## Load pretrained model
+We provide pretrained model: [download](https://zjueducn-my.sharepoint.com/:u:/g/personal/xiongxs_zju_edu_cn/EQi7_h2XzLFDlM3lB_O2eTsBqg6sW1yQj4rm2FBhUcOLJA?e=aQAsHj)
+
 ## License
 This project is licensed under MIT License.
 
