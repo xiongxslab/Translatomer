@@ -57,6 +57,7 @@ python train_all.py [options]
 
 ## Load pretrained model
 We provide [pretrained model](https://zjueducn-my.sharepoint.com/:u:/g/personal/xiongxs_zju_edu_cn/EQi7_h2XzLFDlM3lB_O2eTsBqg6sW1yQj4rm2FBhUcOLJA?e=aQAsHj) and [example data](https://zjueducn-my.sharepoint.com/:f:/g/personal/xiongxs_zju_edu_cn/EqgMcYc6CIVNs1fTMB00lHcB5K1AkEFDSnKsZU0F62kObQ?e=Lfppwl) .
+
 Example to run the codes:
 ```
 python generate_features.py --assembly hg38 --celltype A549 --study GSE82232 --region_len 65536 --nBins 1024
