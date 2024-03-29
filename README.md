@@ -1,8 +1,8 @@
 # Translatomer
 This is our implementation for the paper:
-Jialin He, Lei Xiong, Shaohui Shi, Chengyu Li, Kexuan Chen, Qianchen Fang, Jiuhong Nan, Ke Ding, Jingyun Li, Yuanhui Mao, Carles A. Boix, Xinyang Hu, Manolis Kellis and Xushen Xiong. [Deep learning modeling of ribosome profiling reveals regulatory underpinnings of translatome and interprets disease variants](https://www.biorxiv.org/content/10.1101/2024.02.26.582217v1).
-Preprint[https://doi.org/10.1101/2024.02.26.582217]
 
+Jialin He, Lei Xiong#, Shaohui Shi, Chengyu Li, Kexuan Chen, Qianchen Fang, Jiuhong Nan, Ke Ding, Jingyun Li, Yuanhui Mao, Carles A. Boix, Xinyang Hu, Manolis Kellis and Xushen Xiong#. [Deep learning modeling of ribosome profiling reveals regulatory underpinnings of translatome and interprets disease variants](https://www.biorxiv.org/content/10.1101/2024.02.26.582217v1).
+Preprint[https://doi.org/10.1101/2024.02.26.582217]
 
 ## Introduction
 A transformer-based multi-modal deep learning framework that predicts ribosome profiling track using genomic sequence and cell-type-specific RNA-seq as input.
