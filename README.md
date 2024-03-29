@@ -7,6 +7,12 @@ Jialin He, Lei Xiong#, Shaohui Shi, Chengyu Li, Kexuan Chen, Qianchen Fang, Jiuh
 ## Introduction
 Translatomer is a transformer-based multi-modal deep learning framework that predicts ribosome profiling track using genomic sequence and cell-type-specific RNA-seq as input.
 
+## Citation
+If you want to use our codes and datasets in your research, please cite:
+```
+
+```
+
 ## Prerequisites
 To run this project, you need the following prerequisites:
 - Python 3.9
