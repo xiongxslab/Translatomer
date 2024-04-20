@@ -3,7 +3,7 @@ import torch
 import argparse
 #import math
 import numpy as np
-import os 
+import os
 import json
 import pandas as pd
 import pyfaidx
