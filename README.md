@@ -33,6 +33,27 @@ pip install -r requirements.txt
 ```
 
 ## Data Preparation
+Example data for model training can be downloaded from [Zenodo](https://doi.org/10.5281/zenodo.13709745)
+- Put all input files in a **data** folder. The input files have to be organized as follows:
+```
+  + data
+    + hg38
+      + K562
+        + GSE153597
+          + input_features
+            ++ rnaseq.bw #downloaded from https://doi.org/10.5281/zenodo.13709745
+          + output_features
+            ++ riboseq.bw #downloaded from https://doi.org/10.5281/zenodo.13709745
+      + HepG2
+        + GSE174419
+          + input_features
+            ++ rnaseq.bw #downloaded from https://doi.org/10.5281/zenodo.13709745
+          + output_features
+            ++ riboseq.bw #downloaded from https://doi.org/10.5281/zenodo.13709745
+      *...
+    + mm10
+      *...
+```
 To generate training data, use the following command:
 ```
 python generate_features_4rv.py [options]
@@ -50,40 +71,8 @@ Example to run the codes:
 ```
 find data/ -type d -name 'output_features' -exec mkdir -p '{}/tmp' \;
 find data/ -type d -name 'input_features' -exec mkdir -p '{}/tmp' \;
-nohup python generate_features_4rv.py --assembly hg38 --celltype A549 --study GSE82232 --region_len 65536 --nBins 1024 &
-nohup python generate_features_4rv.py --assembly hg38 --celltype BJ --study GSE69906 --region_len 65536 --nBins 1024 &
-nohup python generate_features_4rv.py --assembly hg38 --celltype brain --study GSE51424 --region_len 65536 --nBins 1024 &
-nohup python generate_features_4rv.py --assembly hg38 --celltype CN34 --study GSE77292 --region_len 65536 --nBins 1024 &
-nohup python generate_features_4rv.py --assembly hg38 --celltype Cybrid --study GSE48933 --region_len 65536 --nBins 1024 &
-nohup python generate_features_4rv.py --assembly hg38 --celltype H1933 --study GSE96716 --region_len 65536 --nBins 1024 &
-nohup python generate_features_4rv.py --assembly hg38 --celltype HAP-1 --study GSE97140 --region_len 65536 --nBins 1024 &
-nohup python generate_features_4rv.py --assembly hg38 --celltype HEK293T --study GSE52809 --region_len 65536 --nBins 1024 &
-nohup python generate_features_4rv.py --assembly hg38 --celltype HeLa --study GSE83493 --region_len 65536 --nBins 1024 &
 nohup python generate_features_4rv.py --assembly hg38 --celltype HepG2 --study GSE174419 --region_len 65536 --nBins 1024 &
-nohup python generate_features_4rv.py --assembly hg38 --celltype hESC --study GSE78959_2 --region_len 65536 --nBins 1024 &
-nohup python generate_features_4rv.py --assembly hg38 --celltype Huh7 --study GSE69602 --region_len 65536 --nBins 1024 &
 nohup python generate_features_4rv.py --assembly hg38 --celltype K562 --study GSE153597 --region_len 65536 --nBins 1024 &
-nohup python generate_features_4rv.py --assembly hg38 --celltype kidney --study GSE59821 --region_len 65536 --nBins 1024 &
-nohup python generate_features_4rv.py --assembly hg38 --celltype macrophages --study GSE66809 --region_len 65536 --nBins 1024 &
-nohup python generate_features_4rv.py --assembly hg38 --celltype MCF7 --study GSE96643 --region_len 65536 --nBins 1024 &
-nohup python generate_features_4rv.py --assembly hg38 --celltype MCF10A --study GSE59817 --region_len 65536 --nBins 1024 &
-nohup python generate_features_4rv.py --assembly hg38 --celltype MDA --study GSE77315 --region_len 65536 --nBins 1024 &
-nohup python generate_features_4rv.py --assembly hg38 --celltype MM1.S --study GSE69047 --region_len 65536 --nBins 1024 &
-nohup python generate_features_4rv.py --assembly hg38 --celltype neuron --study GSE90469_2 --region_len 65536 --nBins 1024 &
-nohup python generate_features_4rv.py --assembly hg38 --celltype NPC --study GSE100007_1 --region_len 65536 --nBins 1024 &
-nohup python generate_features_4rv.py --assembly hg38 --celltype PC3 --study GSE35469 --region_len 65536 --nBins 1024 &
-nohup python generate_features_4rv.py --assembly hg38 --celltype PC9 --study GSE96716 --region_len 65536 --nBins 1024 &
-nohup python generate_features_4rv.py --assembly hg38 --celltype T-ALL --study GSE56887 --region_len 65536 --nBins 1024 &
-nohup python generate_features_4rv.py --assembly hg38 --celltype U2OS --study GSE66929 --region_len 65536 --nBins 1024 &
-nohup python generate_features_4rv.py --assembly hg38 --celltype WTC_11 --study GSE131650 --region_len 65536 --nBins 1024 &
-nohup python generate_features_4rv.py --assembly hg38 --celltype SW480 --study GSE196982 --region_len 65536 --nBins 1024 &
-nohup python generate_features_4rv.py --assembly hg38 --celltype H9 --study GSE162050 --region_len 65536 --nBins 1024 &
-nohup python generate_features_4rv.py --assembly hg38 --celltype SH-SY5Y --study GSE155727 --region_len 65536 --nBins 1024 &
-nohup python generate_features_4rv.py --assembly hg38 --celltype MB135iDUX4 --study GSE178761 --region_len 65536 --nBins 1024 &
-nohup python generate_features_4rv.py --assembly hg38 --celltype 12T --study GSE142822 --region_len 65536 --nBins 1024 &
-nohup python generate_features_4rv.py --assembly hg38 --celltype erythroid --study GSE131809 --region_len 65536 --nBins 1024 &
-nohup python generate_features_4rv.py --assembly hg38 --celltype liver --study GSE112705 --region_len 65536 --nBins 1024 &
-
 ```
 
 ## Model Training
@@ -113,7 +102,7 @@ nohup python train_all_11fold.py --save_path results/bigmodel_h512_l12_lr1e-5_wd
 ```
 
 ## Load pretrained model
-Example data for model training and pretrained model can be downloaded from [Zenodo](https://doi.org/10.5281/zenodo.13709745)
+Pretrained model can be downloaded from [Zenodo](https://doi.org/10.5281/zenodo.13709745)
 
 Example to run the codes:
 ```
