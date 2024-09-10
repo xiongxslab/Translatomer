@@ -97,8 +97,8 @@ python train_all_11fold.py [options]
 ```
 Example to run the codes:
 ```
-nohup python train_all_11fold.py --save_path results/bigmodel_h512_l12_lr1e-5_wd0.05_ws2k_p32_fold0 --data-root data --assembly hg38 --model-type TransModel --fold 0 --patience 6 --max-epochs 128 --save-top-n 128 --num-gpu 1 --batch-size 32 --num-workers 1 >DNA_logs/bigmodel_h512_l12_lr1e-5_wd0.05_ws2k_p32_fold0.log 2>&1 &
-nohup python train_all_11fold.py --save_path results/bigmodel_h512_l12_lr1e-5_wd0.05_ws2k_p32_fold1 --data-root data --assembly hg38 --model-type TransModel --fold 1 --patience 6 --max-epochs 128 --save-top-n 128 --num-gpu 1 --batch-size 32 --num-workers 1 >DNA_logs/bigmodel_h512_l12_lr1e-5_wd0.05_ws2k_p32_fold1.log 2>&1 &
+nohup python train_all_11fold.py --save_path results/bigmodel_h512_l12_lr1e-5_wd0.05_ws2k_p32_fold0 --data-root data --assembly hg38 --dataset data_roots_mini.txt --model-type TransModel --fold 0 --patience 6 --max-epochs 128 --save-top-n 128 --num-gpu 1 --batch-size 32 --num-workers 1 >DNA_logs/bigmodel_h512_l12_lr1e-5_wd0.05_ws2k_p32_fold0.log 2>&1 &
+nohup python train_all_11fold.py --save_path results/bigmodel_h512_l12_lr1e-5_wd0.05_ws2k_p32_fold1 --data-root data --assembly hg38 --dataset data_roots_mini.txt --model-type TransModel --fold 1 --patience 6 --max-epochs 128 --save-top-n 128 --num-gpu 1 --batch-size 32 --num-workers 1 >DNA_logs/bigmodel_h512_l12_lr1e-5_wd0.05_ws2k_p32_fold1.log 2>&1 &
 ```
 
 ## Load pretrained model
