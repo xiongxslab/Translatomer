@@ -113,7 +113,7 @@ nohup python train_all_11fold.py --save_path results/bigmodel_h512_l12_lr1e-5_wd
 ```
 
 ## Load pretrained model
-We provide [pretrained model](https://zjueducn-my.sharepoint.com/:u:/g/personal/xiongxs_zju_edu_cn/EQi7_h2XzLFDlM3lB_O2eTsBqg6sW1yQj4rm2FBhUcOLJA?e=aQAsHj) and [example data](https://zjueducn-my.sharepoint.com/:f:/g/personal/xiongxs_zju_edu_cn/EqgMcYc6CIVNs1fTMB00lHcB5K1AkEFDSnKsZU0F62kObQ?e=Lfppwl) .
+Example data for model training and pretrained model can be downloaded from [Zenodo](https://doi.org/10.5281/zenodo.13709745)
 
 Example to run the codes:
 ```
