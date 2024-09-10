@@ -54,7 +54,7 @@ Example data for model training can be downloaded from [Zenodo](https://doi.org/
     + mm10
       *...
 ```
-To generate training data, use the following command:
+- To generate training data, use the following command:
 ```
 python generate_features_4rv.py [options]
 
