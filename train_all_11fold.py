@@ -30,7 +30,7 @@ from tensor_loader import TensorLoader
 import time
 import random
 
-os.environ["CUDA_VISIBLE_DEVICES"] = "1"
+os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
 SEQ_LEN = 65536
 TARGET_LEN = 1024
@@ -383,6 +383,8 @@ if __name__ == '__main__':
                         help='Root path of training data', required=True)
     parser.add_argument('--assembly', dest='dataset_assembly', default='hg38',
                         help='Genome assembly for training data')
+    parser.add_argument('--dataset', dest='dataset', default='data_roots.txt',
+                        help='Muilti input for data training')
     parser.add_argument('--model-type', dest='model_type', default='TransModel',
                         help='Transformer')
     parser.add_argument('--fold', dest='n_fold', default='0',
@@ -430,7 +432,7 @@ if __name__ == '__main__':
     names = locals()
     celltype_list = []
     study_list = []
-    with open('data_roots.txt', 'r') as file: #human
+    with open({args.dataset}, 'r') as file: #human
         data_roots = [line.strip('\n') for line in file]
     for i, data_root in enumerate(data_roots):
         celltype, study = data_root.split('\t')
@@ -512,4 +514,4 @@ if __name__ == '__main__':
         
     tensor_loader.close()
     
-#nohup python train_all_11fold.py --save_path results/bigmodel/test_bigmodel_h512_l12_lr1e-5_wd0.05_ws2k_p32_fold0 --data-root data --assembly hg38 --model-type TransModel --fold 0 --patience 6 --max-epochs 128 --save-top-n 128 --num-gpu 1 --batch-size 32 --num-workers 1 >DNA_logs/test_bigmodel_h512_l12_lr1e-5_wd0.05_ws2k_p32_fold0.log 2>&1 &
+#nohup python train_all_11fold.py --save_path results/bigmodel/test_bigmodel_h512_l12_lr1e-5_wd0.05_ws2k_p32_fold0 --data-root data --assembly hg38 --dataset data_roots.txt --model-type TransModel --fold 0 --patience 6 --max-epochs 128 --save-top-n 128 --num-gpu 1 --batch-size 32 --num-workers 1 >DNA_logs/test_bigmodel_h512_l12_lr1e-5_wd0.05_ws2k_p32_fold0.log 2>&1 &
