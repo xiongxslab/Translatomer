@@ -104,7 +104,7 @@ nohup python train_all_11fold.py --save_path results/bigmodel_h512_l12_lr1e-5_wd
 ## Tutorial
 - Load pretrained model
 Pretrained model can be downloaded from [Zenodo](https://doi.org/10.5281/zenodo.13709745)
-- An example notebook containing code for applying Translatomer is here.
+- An example notebook containing code for applying Translatomer is [here](https://github.com/xiongxslab/Translatomer/blob/main/Tutorial.ipynb).
 
 ## License
 This project is licensed under MIT License.
