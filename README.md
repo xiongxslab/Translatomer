@@ -51,6 +51,10 @@ Example data for model training can be downloaded from [Zenodo](https://doi.org/
           + output_features
             ++ riboseq.bw #downloaded from https://doi.org/10.5281/zenodo.13709745
       *...
+      ++ gencode.v43.annotation.gff3
+      ++ hg38.fa
+      ++ hg38.fai
+      ++ mean.sorted.bw
     + mm10
       *...
 ```
