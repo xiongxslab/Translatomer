@@ -1,6 +1,5 @@
 import torch
 import torch.nn as nn
-
 import model.blocks as blocks
 import torch.nn.functional as F
 
@@ -16,44 +15,27 @@ class TransModel(nn.Module):
         )
         self.attn = blocks.AttnModule(hidden = mid_hidden, record_attn = record_attn, inpu_dim =512)
         self.conv2 = nn.Conv1d(512, 1, 3, 1, 1)
-        self.Linear4 = nn.Linear(in_features =512, out_features = 1024)
+        self.Linear1 = nn.Linear(in_features =512, out_features = 1024)
         self.record_attn = record_attn
         self.dropout = nn.Dropout(p=0.1)
-        
-    def move_feature_forward(self, x):
-        '''
-        Input dim:
-        batch_size, length, feature
-        to: 
-        batch_size, feature, length
-        '''
-        return x.transpose(1, 2).contiguous() 
         
     def forward(self, x):
         '''
         Input feature:
         batch_size, length = 65536, feature_dim =6
         '''
-        x = self.move_feature_forward(x).float()
-        #seq = x[:, :5, :]
-        #epi = x[:, 5:, :]
-        #x = seq
-        #x = epi
-        
-        #seq = torch.zeros_like(x[:, :5, :])
-        #x[:, :5, :] = seq
-        
+        x = x.transpose(1, 2).contiguous().float()
         x = self.conv1(x)
-        x = self.move_feature_forward(x).float()
+        x = x.transpose(1, 2).contiguous().float()
         if self.record_attn:
             x, attn_weights = self.attn(x)
         else:
             x = self.attn(x)
         x = self.dropout(x)
-        x = self.move_feature_forward(x).float()
+        x = x.transpose(1, 2).contiguous().float()
         x = self.conv2(x)
         x = self.dropout(x)
-        x = self.Linear4(x).squeeze(1)
+        x = self.Linear1(x).squeeze(1)
         x = F.relu(x)
         if self.record_attn:
             return x, attn_weights
