@@ -73,7 +73,7 @@ class PositionalEncoding(nn.Module):
         return self.dropout(x)
 
 class AttnModule(nn.Module):
-    def __init__(self, hidden = 512, layers = 12, record_attn = False, inpu_dim = 512):
+    def __init__(self, hidden = 512, layers = 12, record_attn = False, inpu_dim = 512): 
         super(AttnModule, self).__init__()
 
         self.record_attn = record_attn
