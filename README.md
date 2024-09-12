@@ -33,7 +33,7 @@ pip install -r requirements.txt
 ```
 
 ## Data Preparation
-Example data for model training can be downloaded from [Zenodo](https://doi.org/10.5281/zenodo.13709745)
+Example data for model training can be downloaded from [Zenodo](https://doi.org/10.5281/zenodo.13709746)
 - Put all input files in a **data** folder. The input files have to be organized as follows:
 ```
   + data
@@ -41,15 +41,15 @@ Example data for model training can be downloaded from [Zenodo](https://doi.org/
       + K562
         + GSE153597
           + input_features
-            ++ rnaseq.bw #downloaded from https://doi.org/10.5281/zenodo.13709745
+            ++ rnaseq.bw 
           + output_features
-            ++ riboseq.bw #downloaded from https://doi.org/10.5281/zenodo.13709745
+            ++ riboseq.bw 
       + HepG2
         + GSE174419
           + input_features
-            ++ rnaseq.bw #downloaded from https://doi.org/10.5281/zenodo.13709745
+            ++ rnaseq.bw 
           + output_features
-            ++ riboseq.bw #downloaded from https://doi.org/10.5281/zenodo.13709745
+            ++ riboseq.bw 
       *...
       ++ gencode.v43.annotation.gff3
       ++ hg38.fa
@@ -107,7 +107,7 @@ nohup python train_all_11fold.py --save_path results/bigmodel_h512_l12_lr1e-5_wd
 
 ## Tutorial
 - Load pretrained model
-Pretrained model can be downloaded from [Zenodo](https://doi.org/10.5281/zenodo.13709745)
+Pretrained model can be downloaded from [Zenodo](https://doi.org/10.5281/zenodo.13709746)
 - An example notebook containing code for applying Translatomer is [here](https://github.com/xiongxslab/Translatomer/blob/main/Tutorial.ipynb).
 
 ## License
