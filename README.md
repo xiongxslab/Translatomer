@@ -95,7 +95,7 @@ python train_all_11fold.py [options]
 - --max-epochs  Max epochs for training. Default = 128.
 - --save-top-n  Top n models to save during training. Default = 20.
 - --num-gpu  Number of GPUs to use for training. Default = 1.
-- --batch-size  Batch size for data loading. Default = 6.
+- --batch-size  Batch size for data loading. Default = 32.
 - --ddp-disabled  Flag to disable ddp (Distributed Data Parallel) for training. If provided, it will enable DDP with batch size adjustment.
 - --num-workers  Number of dataloader workers. Default = 1.
 ```
