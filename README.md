@@ -1,8 +1,8 @@
 # Translatomer
 This is our implementation for the paper:
 
-Jialin He, Lei Xiong#, Shaohui Shi, Chengyu Li, Kexuan Chen, Qianchen Fang, Jiuhong Nan, Ke Ding, Jingyun Li, Yuanhui Mao, Carles A. Boix, Xinyang Hu, Manolis Kellis, Jingyun Li and Xushen Xiong#. [Deep learning modeling of ribosome profiling reveals regulatory underpinnings of translatome and interprets disease variants](https://www.biorxiv.org/content/10.1101/2024.02.26.582217v1).
-(Preprint)
+Jialin He, Lei Xiong#, Shaohui Shi, Chengyu Li, Kexuan Chen, Qianchen Fang, Jiuhong Nan, Ke Ding, Jingyun Li, Yuanhui Mao, Carles A. Boix, Xinyang Hu, Manolis Kellis, Jingyun Li and Xushen Xiong#. [Deep learning modeling of ribosome profiling reveals regulatory underpinnings of translatome and interprets disease variants]([https://www.biorxiv.org/content/10.1101/2024.02.26.582217v1](https://www.nature.com/articles/s42256-024-00915-6)).
+(published on ***nature machine intelligence***)
 
 ## Introduction
 Translatomer is a transformer-based multi-modal deep learning framework that predicts ribosome profiling track using genomic sequence and cell-type-specific RNA-seq as input.
@@ -11,7 +11,7 @@ Translatomer is a transformer-based multi-modal deep learning framework that pre
 ## Citation
 If you want to use our codes and datasets in your research, please cite:
 ```
-
+He, J., Xiong, L., Shi, S. et al. Deep learning prediction of ribosome profiling with Translatomer reveals translational regulation and interprets disease variants. Nat Mach Intell (2024). https://doi.org/10.1038/s42256-024-00915-6
 ```
 
 ## Prerequisites
