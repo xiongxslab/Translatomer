@@ -15,7 +15,7 @@ class TransModel(nn.Module):
         )
         self.attn = blocks.AttnModule(hidden = mid_hidden, record_attn = record_attn, inpu_dim =512)
         self.conv2 = nn.Conv1d(512, 1, 3, 1, 1)
-        self.Linear1 = nn.Linear(in_features =512, out_features = 1024)
+        self.Linear4 = nn.Linear(in_features =512, out_features = 1024)
         self.record_attn = record_attn
         self.dropout = nn.Dropout(p=0.1)
         
@@ -35,7 +35,7 @@ class TransModel(nn.Module):
         x = x.transpose(1, 2).contiguous().float()
         x = self.conv2(x)
         x = self.dropout(x)
-        x = self.Linear1(x).squeeze(1)
+        x = self.Linear4(x).squeeze(1)
         x = F.relu(x)
         if self.record_attn:
             return x, attn_weights
